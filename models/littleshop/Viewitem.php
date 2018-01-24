@@ -22,7 +22,7 @@ class Viewitem extends DB {
     {
         
         $descrParams=$this->prepare(" SELECT d.*, l.transl_value, l.lang FROM test_ls_descript_items d"
-                                    . " LEFT OUTER JOIN test_ls_descript_transl l"
+                                    . " LEFT JOIN test_ls_descript_transl l"
                                     . " ON d.id=l.descr_item_id"
                                     . " WHERE good_id=?");
         $descrParams->execute([$this->id]);
